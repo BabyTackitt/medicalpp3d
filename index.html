@@ -1,0 +1,210 @@
+<?php
+
+    require("functions.php");
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Medical PP3D | Home</title>
+        <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">        
+        <link type='text/css' rel='stylesheet' href='style.css'>
+        <link rel='shortcut icon' href='_images/logo.png' type='image/png'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <body>
+    
+        <!--------------------------- SLIDES --------------------->
+        
+        <div class='slider fullscreen'>
+            <ul class='slides'>
+                <li class='waves-effect waves-light' onclick="togglePause()">
+                    <img src='_images/banner.png'>
+                    <div class='overlay'></div>
+                    <div class='caption left-align'>
+                        <h1>Medical PP3D</h1>
+                        <h3>Together, We Prevail</h3>
+                    </div>
+                </li>
+                <li class='waves-effect waves-light' onclick="togglePause()">
+                    <img src='_images/blue%20back%20with%20straps.jpg'>
+                    <div class='overlay'></div>
+                    <div class='caption center-align'>
+                        <h3>We're a Student Run group based in Effingham, Georgia</h3>
+                        <h5>Currently, there are 9 of us making Medical PPE</h5>
+                    </div>
+                </li>
+                <li class='waves-effect waves-light' onclick="togglePause()">
+                    <img src='_images/masks%20and%20straps%20yellow%20back.jpg'>
+                    <div class='overlay'></div>
+                    <div class='caption right-align'>
+                        <h3>We donate all our PPE for free to our medics</h3>
+                        <h5>We also open our products up to the public every Saturday</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!------------------------ SCREEN TO SHOW WHEN PAUSED -------------------------->
+        
+        <div class='pause-screen center-align valign-wrapper'>
+            <div class='pause-overlay overlay'></div>
+            <div class='row pause'>
+                <div class='col white-text s12'>
+                    <i class='large center white-text material-icons'>pause_circle_filled</i>
+                </div>
+            </div>
+        </div>
+        
+        <!--------------------------- SCREEN TO SHOW WHEN UNPAUSED ------------------>
+        
+        <div class='play-screen center-align valign-wrapper'>
+            <div class='play-overlay overlay'></div>
+            <div class='row play'>
+                <div class='col white-text s12'>
+                    <i class='large center white-text material-icons'>play_circle_filled</i>
+                </div>
+            </div>
+        </div>
+        
+        <!----------------------------- MENU BUTTON ---------------------------->
+        
+        <div class='fixed-action-btn'>
+            <a data-target='slide-out' class='waves-effect waves-light btn-floating btn-large pulse red sidenav-trigger'><i class='material-icons'>menu</i></a>
+        </div>
+        
+        <!----------------------------- MENU --------------------------------------->
+        
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class='user-view white-text'>
+                    <div class='background'>
+                        <img src='_images/blue%20back%20with%20straps.jpg'>
+                    </div>
+                    <span class='user'><a href='index.html'><img width="40%" src='_images/logo.png'></a></span>
+                    <span class='name'>Medical PP3D</span>
+                    <span class='email'>
+                            <a href='mailto:medical.pp3d@gmail.com' target="_blank" class='white-text'>medical.pp3d@gmail.com</a>
+                    </span>
+                </div>
+            </li>
+            <li class="no-padding">
+                <ul class='collapsible collapsible-accordion'>
+                    <li>
+                        <a class='collapsible-header' href='index.html' class='blue lighten-4'><i class='material-icons'>home</i>Home</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' href='story.html'><i class='material-icons'>menu_book</i>Our Story</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' href='community.html'><i class='material-icons'>group</i>In the Community</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' href='request_ppe.html'><i class='material-icons'>healing</i>Request PPE</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' onclick='changeIcon(this)'><i class='material-icons'>arrow_drop_down</i>How can I help?</a>
+                        <div class='collapsible-body'>
+                            <ul>
+                                <li>
+                                    <a href='make_ppe.html'><i class='material-icons'>healing</i> Make PPE</a>
+                                </li>
+                                <li>
+                                    <a href='deliver.html'><i class='material-icons'>drive_eta</i> Deliver and Pickup</a>
+                                </li>
+                                <li>
+                                    <a href='thank_you.html'><i class='material-icons'>edit</i> Write Thank You Notes</a>
+                                </li>
+                                <li>
+                                    <a href='donate_supplies'><i class='material-icons'>local_hospital</i> Donate Supplies</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' onclick='changeIcon(this)'><i class='material-icons'>arrow_drop_down</i>What're We Making?</a>
+                        <div class='collapsible-body'>
+                            <ul>
+                                <li><a href='masks.html' class='waves-effect'><i class='material-icons'></i>Masks </a></li>
+                                <li><a href='straps.html' class='waves-effect'><i class='material-icons'></i>Straps </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' href='group.html'><i class='material-icons'>emoji_people</i>Meet the Group</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' target='_blank' href='https://www.gofundme.com/f/3d-medical-ppe'><i class='material-icons'>attach_money</i>Support and Donate</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a class='collapsible-header' href='expenses.html'><i class='material-icons'>account_balance</i> Our Expenses</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+        <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5eaa181708cfa2001202af36&product=sticky-share-buttons">
+        </script>
+        
+        <script>
+            
+            M.AutoInit();
+            
+            $(document).ready(function(){
+                $('.slider').slider();
+            });
+            
+            var paused = false;
+            function togglePause() {
+                var elem = $(".slider");
+                var instance = M.Slider.getInstance(elem);
+                var pauseScreen = $(".pause-screen");
+                var playScreen = $(".play-screen");
+                
+                if (paused) {
+                    instance.start();
+                    playScreen.css({"opacity": "1", "z-index": "100"});
+                    
+                    setTimeout(function() {
+                        playScreen.css({"opacity": "0", "z-index": "0"});
+                    }, 1500)
+                } else {
+                    instance.pause();
+                    pauseScreen.css({"opacity": "1", "z-index": "100"});
+                    
+                    setTimeout(function() {
+                        pauseScreen.css({"opacity": "0", "z-index": "0"});
+                    }, 1500);
+                }
+                
+                paused = !paused;
+            }
+            
+            function changeIcon(elm) {
+                var collapsibles = document.getElementsByClassName("collapsible-body");
+                elm.children[0].innerHTML = "arrow_drop_up";
+                
+                for (var c = 0; c < collapsibles.length; c ++) {
+                    if (collapsibles[c].parentElement.className.includes("active")) {
+                        activeDropdown = collapsibles[c];
+                        collapsibles[c].parentElement.children[0].children[0].innerHTML = "arrow_drop_down";
+                    }
+                }
+            }
+            
+        </script>
+        
+    </body>
+</html>
